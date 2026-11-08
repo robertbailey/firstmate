@@ -1,0 +1,79 @@
+# scout stand-in: home report + durable artifacts left in the copy's data/scout-a1 (gitignored)
+
+$ bash bin/fm-captain-hold.sh complete scout-a1 --none
+complete: scout-a1 captain-call inventory reviewed
+[exit 0]
+## S2 plain teardown
+
+$ bin/fm-teardown.sh scout-a1
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  watcher supervision needs Stop-owned automatic recovery; inspect the hook registration and startup status before ending the turn.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+REFUSED: scout task data may remain at /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo/data/scout-a1; cleanup would delete it with the copy.
+Reconcile and verify these artifacts in /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/data/scout-a1/, then remove only the preserved source and rerun teardown. --force does not bypass this check; to discard them on the captain's explicit word, rerun with --discard-scout-data.
+[exit 1]
+/private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo/data/scout-a1:
+total 8
+drwxr-xr-x@ 4 rb  staff  128 Nov  8 12:26 .
+drwxr-xr-x@ 3 rb  staff   96 Nov  8 12:26 ..
+drwxr-xr-x@ 3 rb  staff   96 Nov  8 12:26 captain
+-rw-r--r--@ 1 rb  staff   12 Nov  8 12:26 raw.json
+
+/private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo/data/scout-a1/captain:
+total 8
+drwxr-xr-x@ 3 rb  staff   96 Nov  8 12:26 .
+drwxr-xr-x@ 4 rb  staff  128 Nov  8 12:26 ..
+-rw-r--r--@ 1 rb  staff   18 Nov  8 12:26 marks.json
+{"answer":"keep"}
+/private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/state/scout-a1.meta
+## S3 --force teardown
+
+$ bin/fm-teardown.sh scout-a1 --force
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM
+WARNING: watcher still down (same stale episode; last beat: never, grace 300s) - full banner already printed this episode.
+REFUSED: scout task data may remain at /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo/data/scout-a1; cleanup would delete it with the copy.
+Reconcile and verify these artifacts in /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/data/scout-a1/, then remove only the preserved source and rerun teardown. --force does not bypass this check; to discard them on the captain's explicit word, rerun with --discard-scout-data.
+[exit 1]
+{"answer":"keep"}
+/private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/state/scout-a1.meta
+primary:bash
+primary:fm-scout-a1
+primary:drive2
+## S4 reconcile into home, remove preserved source, rerun
+
+$ bin/fm-teardown.sh scout-a1
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM
+WARNING: watcher still down (same stale episode; last beat: never, grace 300s) - full banner already printed this episode.
+teardown: reaping leaked worktree process(es) for scout-a1: 62628 65763
+teardown: force-killing leaked worktree process(es) for scout-a1: 62628
+A new version of treehouse is available: v3.1.5 → v3.1.8
+Run "treehouse update" to update
+
+🌳 Worktree returned to pool.
+teardown scout-a1 complete (window primary:fm-scout-a1, worktree /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo)
+Backlog: scout-a1 just finished (this home keeps no markdown backlog at /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/data/backlog.md). Update /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/data/backlog.md - move scout-a1 to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+[exit 0]
+--- after
+home-summary.json
+terminal-outcomes
+{"answer":"keep"}
+total 32
+drwxr-xr-x@ 6 rb  staff   192 Nov  8 12:26 .
+drwxr-xr-x@ 3 rb  staff    96 Nov  8 12:26 ..
+-rw-r--r--@ 1 rb  staff   113 Nov  8 12:26 .git
+-rw-r--r--@ 1 rb  staff    12 Nov  8 12:26 .gitignore
+-rw-r--r--@ 1 rb  staff     5 Nov  8 12:26 README.md
+-rw-r--r--@ 1 rb  staff  2133 Nov  8 12:26 treehouse.toml
+A new version of treehouse is available: v3.1.5 → v3.1.8
+Run "treehouse update" to update
+
+base  main  (repository default)
+1     available    /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo  (detached)
+primary:bash
+primary:drive2
+DONE

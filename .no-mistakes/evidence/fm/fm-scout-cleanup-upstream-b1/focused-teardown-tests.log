@@ -1,0 +1,4 @@
+ok - forced secondmate cleanup refuses before discarding child scout task data
+ok - forced secondmate retirement proceeds when a child scout's recorded copy is gone
+ok - scout task data requires preservation even with a report, ignored files, links, or --force
+ok - --discard-scout-data discards scout task data on explicit word and waives nothing else

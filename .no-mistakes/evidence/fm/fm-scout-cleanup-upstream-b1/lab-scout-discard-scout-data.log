@@ -1,0 +1,31 @@
+## S5 --discard-scout-data
+
+$ bin/fm-spawn.sh scout-b2 /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo --scout --harness sleep 3600
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM
+spawned scout-b2 harness=sleep kind=scout window=primary:fm-scout-b2 worktree=/private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo
+[exit 0]
+complete: scout-b2 captain-call inventory reviewed
+
+$ bin/fm-teardown.sh scout-b2 --discard-scout-data
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  watcher supervision needs Stop-owned automatic recovery; inspect the hook registration and startup status before ending the turn.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+teardown: reaping leaked worktree process(es) for scout-b2: 87681 90215
+teardown: force-killing leaked worktree process(es) for scout-b2: 87681
+A new version of treehouse is available: v3.1.5 → v3.1.8
+Run "treehouse update" to update
+
+🌳 Worktree returned to pool.
+teardown scout-b2 complete (window primary:fm-scout-b2, worktree /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo)
+Backlog: scout-b2 just finished (this home keeps no markdown backlog at /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/data/backlog.md). Update /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/data/backlog.md - move scout-b2 to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+[exit 0]
+--- after
+ls: /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/state/scout-b2.meta: No such file or directory
+ls: /private/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T/fm-lab.zRkqYM/projects/demo/.treehouse/demo-4cdffa/1/demo/data/scout-b2: No such file or directory
+# Scout report.
+## S6/S7 forced secondmate retirement with a child scout
