@@ -1,0 +1,6 @@
+ok - real herdr (herdr 0.9.5): events.subscribe capability gate passes (protocol >= 16, events surface present in api schema)
+ok - real herdr (herdr 0.9.5): a driven idle->blocked transition returns the blocked record in 0.321s (pane w1:p2)
+ok - real herdr: the watcher fast-path enqueues a stale wake naming the task window from the live blocked transition
+ok - real herdr (herdr 0.9.5): a gone pane is dropped and named, and the live pane's blocked edge still returns
+ok - real herdr (herdr 0.9.5): a Cursor pane reading blocked raises no push wake
+bash tests/fm-backend-herdr-eventwait-smoke.test.sh  0.65s user 0.71s system 18% cpu 7.431 total

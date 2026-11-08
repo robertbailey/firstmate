@@ -1,0 +1,6 @@
+ok - real herdr (herdr 0.9.5): events.subscribe capability gate passes (protocol >= 16, events surface present in api schema)
+ok - real herdr (herdr 0.9.5): a driven idle->blocked transition returns the blocked record in 0.332s (pane w1:p2)
+ok - real herdr: the watcher fast-path enqueues a stale wake naming the task window from the live blocked transition
+not ok - one gone pane must not fail the subscription; expected rc 0, got '2' diag=''
+fm-herdr-lab: missing fleet-state tripwire for 'fm-lab-eventwait-smoke-98042'; refusing destructive calls
+rc=1

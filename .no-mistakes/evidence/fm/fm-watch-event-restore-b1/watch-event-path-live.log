@@ -1,0 +1,26 @@
+FM_HOME=/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T//fm-lab.9b9M01 STATE=/var/folders/k7/zl679d0n29x_cy25sv_0w9r40000gn/T//fm-lab.9b9M01/state SESSION=fm-lab-evoff-81468 ROOT={run-worktree}
+gone panes: w1:p2 w1:p3 (presence: dead dead); live pane: w1:p4
+
+=== S1: only gone panes recorded -> 3 failed cycles must switch the event path off WITH a named cause
+cycle 1: _event_cap_ok=1 fails=1
+cycle 2: _event_cap_ok=1 fails=2
+cycle 3: _event_cap_ok=0 fails=3
+  triage| [2026-11-08T12:11:19-0800] event path off after 3 consecutive failures (herdr:fm-lab-evoff-81468): herdr subscription rejected (pane_not_found: pane w1:p2 not found);  recorded pane(s) gone: fm-lab-evoff-81468:w1:p2, fm-lab-evoff-81468:w1:p3; polling until the pane set changes or 6s pass
+
+=== S2: path off, same pane set -> next cycle polls only (no event wait)
+cycle took 3s, _event_cap_ok=0
+
+=== S3: a live task is added -> pane set change re-arms; gone panes dropped; live blocked edge wakes
+WAKE: stale: fm-lab-evoff-81468:w1:p4 (herdr: agent blocked - waiting on human, escalated immediately, not via wedge timer)
+cycle took 1s, _event_cap_ok=1 fails=0
+  triage| [2026-11-08T12:11:19-0800] event path off after 3 consecutive failures (herdr:fm-lab-evoff-81468): herdr subscription rejected (pane_not_found: pane w1:p2 not found);  recorded pane(s) gone: fm-lab-evoff-81468:w1:p2, fm-lab-evoff-81468:w1:p3; polling until the pane set changes or 6s pass
+  triage| [2026-11-08T12:11:24-0800] event path re-armed: watched pane set changed (herdr:fm-lab-evoff-81468)
+wake-queue:
+  queue| 1794168685	1	stale	fm-lab-evoff-81468:w1:p4	stale: fm-lab-evoff-81468:w1:p4 (herdr: agent blocked - waiting on human, escalated immediately, not via wedge timer)
+
+=== S4: live task removed again -> gone-only set fails 3x -> off; after FM_EVENT_CAP_RETRY_SECS the timer re-arms (probation) and a repeat failure is named again
+after 3 cycles: _event_cap_ok=0
+after timer cycle: _event_cap_ok=0
+  triage| [2026-11-08T12:11:30-0800] event path off after 3 consecutive failures (herdr:fm-lab-evoff-81468): herdr subscription rejected (pane_not_found: pane w1:p2 not found);  recorded pane(s) gone: fm-lab-evoff-81468:w1:p2, fm-lab-evoff-81468:w1:p3; polling until the pane set changes or 6s pass
+  triage| [2026-11-08T12:11:39-0800] event path re-armed: retrying after 6s (herdr:fm-lab-evoff-81468)
+  triage| [2026-11-08T12:11:40-0800] event path off after 3 consecutive failures (herdr:fm-lab-evoff-81468): herdr subscription rejected (pane_not_found: pane w1:p2 not found);  recorded pane(s) gone: fm-lab-evoff-81468:w1:p2, fm-lab-evoff-81468:w1:p3; polling until the pane set changes or 6s pass
