@@ -1,0 +1,16 @@
+=== scenario discard (lab=<lab>, copy=<copy> is a real leased Treehouse slot) ===
+$ fm-teardown.sh probe-discard --force --discard-scout-data   [bin=01M6YKFCZ7C8M4W03PFQ00XPHR]
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+teardown: reaping leaked worktree process(es) for probe-discard: 89514 90989
+A new version of treehouse is available: v3.1.5 → v3.1.8
+Run "treehouse update" to update
+
+🌳 Worktree returned to pool.
+teardown probe-discard complete (window firstmate:fm-probe-discard, worktree <lab>/pool/.treehouse/demo-fc740c/1/demo)
+Backlog: probe-discard just finished (this home keeps no markdown backlog at <lab>/data/backlog.md). Update <lab>/data/backlog.md - move probe-discard to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+--- state after: rc=0
+copy data/probe-discard: ABSENT
+copy scratch.txt: ABSENT
+task record: ABSENT
+scout window: GONE
+home data/probe-discard: <lab>/data/probe-discard/report.md 

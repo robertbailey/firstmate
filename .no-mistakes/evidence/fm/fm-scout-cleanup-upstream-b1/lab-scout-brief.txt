@@ -1,0 +1,20 @@
+$ fm-brief.sh probe-brief demo --scout
+scaffolded: <lab>/data/probe-brief/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})
+rc=0
+--- generated brief: <lab>/data/probe-brief/brief.md
+# Setup
+You are in a disposable git worktree of demo, at a detached HEAD on a clean default branch.
+This is a SCOUT task: the deliverable is a written report, not a PR.
+The worktree is your laboratory - install, run, edit, and make scratch commits freely; the whole copy, including anything left under its own `data/`, is deleted at cleanup.
+Keep the report and every durable task artifact under the absolute home directory `<lab>/data/probe-brief/`, never under a worktree-relative `data/probe-brief/`.
+Durable artifacts include captain answers, raw captures, parse evidence, frozen review items, and seals; the report must reference the preserved evidence.
+
+# Rules
+1. Never push to any remote and never open a PR.
+2. Keep project edits inside this worktree; outside it, write only task material under `<lab>/data/probe-brief/` and the status and steering-inbox records below, except for the task's empty-inventory attestation through `fm-captain-hold.sh complete --none`, exactly as specified under Definition of done.
+3. Use gh-axi for GitHub operations and chrome-devtools-axi for browser operations.
+4. Report status by appending one line:
+--- report path lines in brief:
+19:Keep the report and every durable task artifact under the absolute home directory `<lab>/data/probe-brief/`, never under a worktree-relative `data/probe-brief/`.
+24:2. Keep project edits inside this worktree; outside it, write only task material under `<lab>/data/probe-brief/` and the status and steering-inbox records below, except for the task's empty-inventory attestation through `fm-captain-hold.sh complete --none`, exactly as specified under Definition of done.
+83:Write your findings to `<lab>/data/probe-brief/report.md`.

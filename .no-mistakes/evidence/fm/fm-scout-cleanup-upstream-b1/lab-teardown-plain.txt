@@ -1,0 +1,13 @@
+=== scenario plain (lab=<lab>, copy=<copy> is a real leased Treehouse slot) ===
+$ fm-teardown.sh probe-plain    [bin=01M6YKFCZ7C8M4W03PFQ00XPHR]
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+REFUSED: scout task data may remain at <lab>/pool/.treehouse/demo-979c97/1/demo/data/probe-plain; cleanup would delete it with the copy.
+Reconcile and verify these artifacts in <lab>/data/probe-plain/, then remove only the preserved source and rerun teardown. --force does not bypass this check; to discard them on the captain's explicit word, rerun with --discard-scout-data.
+--- state after: rc=1
+copy data/probe-plain: PRESENT
+<copy>/data/probe-plain/captain/answers.json
+<copy>/data/probe-plain/raw.json
+copy scratch.txt: PRESENT
+task record: PRESENT
+scout window: ALIVE
+home data/probe-plain: <lab>/data/probe-plain/report.md 

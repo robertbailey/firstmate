@@ -1,0 +1,13 @@
+=== scenario late (lab=<lab>, copy=<copy> is a real leased Treehouse slot) ===
+$ fm-teardown.sh probe-late --force   [bin=01M6YKFCZ7C8M4W03PFQ00XPHR]
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+teardown: reaping leaked worktree process(es) for probe-late: 2415 3761
+REFUSED: scout task data may remain at <lab>/pool/.treehouse/demo-92820f/1/demo/data/probe-late; cleanup would delete it with the copy.
+Reconcile and verify these artifacts in <lab>/data/probe-late/, then remove only the preserved source and rerun teardown. --force does not bypass this check; to discard them on the captain's explicit word, rerun with --discard-scout-data.
+--- state after: rc=1
+copy data/probe-late: PRESENT
+<copy>/data/probe-late/answers.json
+copy scratch.txt: PRESENT
+task record: PRESENT
+scout window: GONE
+home data/probe-late: <lab>/data/probe-late/report.md 

@@ -1,0 +1,16 @@
+=== scenario base (lab=<lab>, copy=<copy> is a real leased Treehouse slot) ===
+$ fm-teardown.sh probe-base    [bin=fm-base.MTCags]
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+teardown: reaping leaked worktree process(es) for probe-base: 53762 56235
+A new version of treehouse is available: v3.1.5 → v3.1.8
+Run "treehouse update" to update
+
+🌳 Worktree returned to pool.
+teardown probe-base complete (window firstmate:fm-probe-base, worktree <lab>/pool/.treehouse/demo-9782d5/1/demo)
+Backlog: probe-base just finished (this home keeps no markdown backlog at <lab>/data/backlog.md). Update <lab>/data/backlog.md - move probe-base to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.
+--- state after: rc=0
+copy data/probe-base: ABSENT
+copy scratch.txt: ABSENT
+task record: ABSENT
+scout window: GONE
+home data/probe-base: <lab>/data/probe-base/report.md 

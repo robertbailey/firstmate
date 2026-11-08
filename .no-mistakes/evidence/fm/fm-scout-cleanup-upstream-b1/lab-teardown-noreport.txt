@@ -1,0 +1,12 @@
+=== scenario noreport (lab=<lab>, copy=<copy> is a real leased Treehouse slot) ===
+$ fm-teardown.sh probe-noreport --discard-scout-data   [bin=01M6YKFCZ7C8M4W03PFQ00XPHR]
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+REFUSED: scout task probe-noreport has no report at <lab>/data/probe-noreport/report.md.
+The report is the work product. Have the crewmate write it, or use --force after explicit discard approval.
+--- state after: rc=1
+copy data/probe-noreport: PRESENT
+<copy>/data/probe-noreport/answers.json
+copy scratch.txt: PRESENT
+task record: PRESENT
+scout window: ALIVE
+home data/probe-noreport: 
